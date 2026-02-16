@@ -1,7 +1,7 @@
 import { ShoppingCart, User} from "lucide-react"
 function Navbar(){
     return(
-        <nav className="sticky top-0 z-50 h-16 shadow-md bg-white">
+        <nav className="sticky top-0 h-16 shadow-md bg-white border-b">
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold">
