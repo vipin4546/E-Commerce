@@ -9,7 +9,7 @@ function CategoryScrollBar({selectedCategory,setSelectedCategory}){
                     categories.map((category)=>{
                         return(
 
-                        <div key={category.id} onClick={() => setSelectedCategory(category.name)} className="whitespace-nowrap border px-4 py-2 rounded cursor-pointer hover:bg-gray-100">
+                        <div key={category.id} onClick={() => setSelectedCategory(category.name)} className={`whitespace-nowrap border px-4 py-2 rounded cursor-pointer hover:bg-gray-100 ${category.name === selectedCategory? "bg-black text-white": "border text-gray-700"}`}>
                             {category.name}
                         </div>
                         )
