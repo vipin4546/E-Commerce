@@ -1,4 +1,5 @@
 const categories = [
+  {id:0,name:"All",},
   { id: 1, name: "Electronics", image: "/electronics.png" },
   { id: 2, name: "Fashion", image: "/fashion.png" },
   { id: 3, name: "Household", image: "/household.png" },
