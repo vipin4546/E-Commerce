@@ -1,10 +1,17 @@
 import products from "../../data/product.js";
 import CategoryScrollBar from "../CategoryScrollBar/CategoryScrollBar.jsx";
-function Products({ selectedCategory }) {
+function Products({ selectedCategory,setCartItems,cartItems }) {
+  function addToCart(product){
+    const existing = cartItems.find(item=>{return product.id === item.id})
+    if(existing){
+      return
+    }
+    setCartItems([...cartItems,product])
+  }
   const filteredProducts =
     selectedCategory == "All"
       ? products
-      : products.filter((product) => product.category === selectedCategory);
+      : products.filter((product) => product.category === selectedCategory );
 
   return (
     <section className="py-12 mt-10 mb-10 px-6">
@@ -22,6 +29,7 @@ function Products({ selectedCategory }) {
                 />
                 <p className="font-semibold text-lg">{product.name}</p>
                 <p className="text-gray-600 font-bold">₹{product.price}</p>
+                <button className="font-semibold border" onClick = {()=>{addToCart(product)}}>Add to cart</button>
               </div>
             </div>
           );

@@ -8,13 +8,16 @@ import OfferBanner from "../components/OfferBanner/OfferBanner"
 import Benefits from "../components/Benefits/Benefits"
 function Home(){
     const[selectedCategory,setSelectedCategory] = useState("All")
+    const[searchTerm, setSearchTerm] = useState("")
+    const[cartItems,setCartItems] = useState([])
+   
     return (
 
 <>
-<Navbar />
+<Navbar serchTerm = {searchTerm} setSearchTerm = {setSearchTerm} cartItems = {cartItems}  />
 <CategoryScrollBar selectedCategory = {selectedCategory} setSelectedCategory={setSelectedCategory}/>
 <Hero />
-<Products selectedCategory={selectedCategory} />
+<Products selectedCategory={selectedCategory} setCartItems={setCartItems} cartItems = {cartItems} />
 <OfferBanner />
 <Benefits />
 <Footer />
